@@ -14,13 +14,15 @@ public class UserInterface {
 		JOptionPane.showMessageDialog(null, "Game Over!", "GameOver", JOptionPane.INFORMATION_MESSAGE);
 	}
 
-
+	public UserInterface(GameGrid grid) {
+		this.grid = grid;
+	}
 
 public void run() {
 
 	Container contentPane = window.getContentPane();
 	GameGrid grid = new GameGrid(DEFAULT_GRID_WIDTH, DEFAULT_GRID_HEIGHT);
-	UserInterface UserInterface = new UserInterface();
+	UserInterface UserInterface = new UserInterface(grid);
 	UserInterface.init();
 
 	// set JPanel's size
