@@ -1,24 +1,24 @@
 
+import java.awt.event.*;
+
+
 public class KeyAction {
 	private boolean running;
 	private final GameGrid grid;
 	private final UserInterface gameView;
-	
+
 	public KeyAction(GameGrid grid, UserInterface gameView) {
+		this.running = true;
 		this.grid = grid;
 		this.gameView = gameView;
-		this.running = true;
 	}
-	
-	
-	
-	
+
 	public void keyReleased(KeyEvent e) {
 	}
 
 	public void keyTyped(KeyEvent e) {
 	}
-	
+
 	public void keyPressed(KeyEvent e) {
 		int keyCode = e.getKeyCode();
 		if (grid.isDirectionChanged == false) { // Maps for what will happen when the different keys gets pressed
@@ -37,6 +37,25 @@ public class KeyAction {
 				break;
 			case KeyEvent.VK_SPACE:
 				break;
+			}
+		}
+	}
+
+	@Override
+	public void run() {
+		while (running) {
+			try {
+				Thread.sleep(Math.max(50, 200 - grid.getScore() / 5 * 30)); // DEFAULT_MOVE_INTERVAL
+			} catch (InterruptedException e) {
+				break;
+			}
+			grid.isDirectionChanged = false;
+			if (grid.nextRound() == true) {
+				gameView.draw();
+			} else {
+				System.out.print("Congraduations! Your scores: " + grid.getScore());
+				gameView.showGameOverMessage();
+				running = false;
 			}
 		}
 	}
