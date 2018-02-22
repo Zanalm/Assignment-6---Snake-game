@@ -18,5 +18,27 @@ public class KeyAction {
 
 	public void keyTyped(KeyEvent e) {
 	}
+	
+	public void keyPressed(KeyEvent e) {
+		int keyCode = e.getKeyCode();
+		if (grid.isDirectionChanged == false) { // Maps for what will happen when the different keys gets pressed
+			switch (keyCode) {
+			case KeyEvent.VK_UP:
+				grid.changeDirection(Direction.UP);
+				break;
+			case KeyEvent.VK_RIGHT:
+				grid.changeDirection(Direction.RIGHT);
+				break;
+			case KeyEvent.VK_DOWN:
+				grid.changeDirection(Direction.DOWN);
+				break;
+			case KeyEvent.VK_LEFT:
+				grid.changeDirection(Direction.LEFT);
+				break;
+			case KeyEvent.VK_SPACE:
+				break;
+			}
+		}
+	}
 
 }
