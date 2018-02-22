@@ -1,4 +1,4 @@
-import java.util.Arrays;
+
 import java.util.Random;
 
 public class GameGrid {
@@ -93,4 +93,17 @@ public class GameGrid {
 	public int getScore() {
 		return scores;
 	}
+	
+	public boolean nextRound() {                                     //follow the direction and move one step
+        if (isMoveValid(snakeDirection)) {
+            TypeLinked move = snake.move(snakeDirection);
+            if (snake.isEatFood(food)) {                             //if ate food, add the TypeLinked moved at tail
+                snake.addTail(move);
+                createFood();
+                System.out.println(++scores);
+            } else isCovered[move.getX()][move.getY()] = false; {
+            return true;
+            }
+        } else return false;
+    }
 }

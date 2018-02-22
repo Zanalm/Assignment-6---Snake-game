@@ -13,7 +13,7 @@ public class UserInterface {
 		JOptionPane.showMessageDialog(null, "Game Over!", "GameOver", JOptionPane.INFORMATION_MESSAGE);
 	}
 
-}
+
 
 public void run() {
 

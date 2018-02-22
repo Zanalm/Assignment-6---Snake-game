@@ -41,7 +41,6 @@ public class KeyAction {
 		}
 	}
 
-	@Override
 	public void run() {
 		while (running) {
 			try {
