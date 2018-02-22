@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyListener;
 
 public class UserInterface {
 	JFrame window = new JFrame("Snake Game");
@@ -19,7 +20,7 @@ public void run() {
 
 	Container contentPane = window.getContentPane();
 	GameGrid grid = new GameGrid(DEFAULT_GRID_WIDTH, DEFAULT_GRID_HEIGHT);
-	UserInterface UserInterface = new UserInterface(grid);
+	UserInterface UserInterface = new UserInterface();
 	UserInterface.init();
 
 	// set JPanel's size
@@ -34,11 +35,11 @@ public void run() {
 	window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	window.setVisible(true);
 
-	KeyAction gameController = new KeyAction(grid, UserInterface);
+	KeyListener gameController = new KeyAction(grid, UserInterface);
 	window.addKeyListener(gameController);
 
 	// start the thread
-	new Thread(gameController).start();
+	new Thread((Runnable) gameController).start();
 
 }
 

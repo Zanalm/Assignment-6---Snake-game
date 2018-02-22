@@ -2,7 +2,7 @@
 import java.awt.event.*;
 
 
-public class KeyAction {
+public class KeyAction implements KeyListener, Runnable {
 	private boolean running;
 	private final GameGrid grid;
 	private final UserInterface gameView;
