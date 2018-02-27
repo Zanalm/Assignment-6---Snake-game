@@ -106,5 +106,9 @@ public class DrawSnake {
 		}
 
 	}
+	
+	public void Bounds() {
+		frame.setBounds(450, 350, x, y);
+	}
 
 }
