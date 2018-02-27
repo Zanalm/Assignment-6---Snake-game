@@ -33,8 +33,6 @@ public class DrawSnake {
 		};
 		Action leftAction = new AbstractAction() {
 			private static final long serialVersionUID = 2L;
-
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				x -= 2;
 				if (x > 0) {
@@ -45,8 +43,6 @@ public class DrawSnake {
 		};
 		Action downAction = new AbstractAction() {
 			private static final long serialVersionUID = 3L;
-
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				y -= 2;
 				if (y < 0) {
@@ -57,8 +53,6 @@ public class DrawSnake {
 		};
 		Action upAction = new AbstractAction() {
 			private static final long serialVersionUID = 4L;
-
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				y += 2;
 				if (y < 0) {
@@ -92,7 +86,6 @@ public class DrawSnake {
 	private class DrawPanel extends JPanel {
 
 		private static final long serialVersionUID = 1L;
-
 		protected void paintComponent(Graphics g) {
 			super.paintComponent(g);
 			g.setColor(Color.GRAY);
@@ -112,3 +105,5 @@ public class DrawSnake {
 	}
 
 }
+
+/*update every 10 ms, the screen will update (render) and erase the drawn out components. Do this with timer*/
