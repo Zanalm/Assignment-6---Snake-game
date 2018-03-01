@@ -2,7 +2,6 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
-
 import javax.swing.AbstractAction;
 import javax.swing.Action;
 import javax.swing.ActionMap;
@@ -12,8 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.KeyStroke;
 
 public class DrawSnake {
-
-	JFrame frame = new JFrame("Snakity Snake");
+   	JFrame frame = new JFrame("Snakity Snake");
 	DrawPanel drawPanel = new DrawPanel();
 
 	int x = 0;
@@ -103,6 +101,7 @@ public class DrawSnake {
 	public void Bounds() {
 		frame.setBounds(450, 350, x, y);
 	}
+	
 
 }
 
